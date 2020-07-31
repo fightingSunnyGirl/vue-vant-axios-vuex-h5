@@ -27,7 +27,7 @@ const router = new Router({
           description:'页面描述段落'
         }
       },
-      component: () => import(/* webpackChunkName: "home" */ './views/home/index.vue')
+      component: () => import(/* webpackChunkName: "home" */ '../views/home/index.vue')
     },
   ]
 });

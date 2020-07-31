@@ -3,19 +3,18 @@ import Es6Promise from 'es6-promise';
 import Vue from 'vue';
 import Vant from 'vant';
 import App from './App.vue';
-import router from './router';
-import store from './store';
+import router from '@routes/index';
+import store from '@store/index';
 import 'lib-flexible';
 import FastClick from 'fastclick';
 import wx from 'weixin-jsapi';
 import 'vant/lib/index.css';
-import './assets/css/base/init.css';
-import { post, get} from './axios';
-import { alert, inputClick } from './util';
-import { handleRouter, shareInit, refreshPage } from './assets/js/public/router_map'
+import '@assets/css/base/init.css';
+import { post, get} from '@/axios';
+import { alert } from '@assets/js/public/common';
+import { handleRouter, refreshPage } from '@assets/js/public/router_map';
 import { Lazyload } from 'vant';
-import './assets/js/public/eruda.js'
-import * as filters from './filters' // 引入全局过滤器
+import '@assets/js/public/eruda.js'
 // 监测线上错误
 // import * as Sentry from '@sentry/browser';
 // import * as Integrations from '@sentry/integrations';
@@ -26,9 +25,7 @@ import * as filters from './filters' // 引入全局过滤器
 
 
 Es6Promise.polyfill()
-Object.keys(filters).forEach(key => {
-  Vue.filter(key, filters[key])
-})
+
 // eruda.init();//在移动端控制台调试工具 将此行代码放到页面相对应的js里面就可以
 
 Vue.prototype.$post = post;
@@ -47,7 +44,6 @@ FastClick.prototype.focus = function (tragetElement) {
 
 Vue.config.productionTip = false;
 handleRouter();
-shareInit();
 new Vue({
   router,
   store,
@@ -80,8 +76,5 @@ new Vue({
         sessionStorage.setItem("store", JSON.stringify(this.$store.state))
       })
     }
-  },
-  mounted() {
-    inputClick();
-  },
+  }
 }).$mount('#app')

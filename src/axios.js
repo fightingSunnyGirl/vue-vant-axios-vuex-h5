@@ -3,8 +3,8 @@
  */
 import axios from 'axios'
 import qs from 'qs'
-import { alert } from './util';
-import * as base from './base';
+import { alert } from '@assets/js/public/common';
+import * as base from '@/base';
 
 const request = axios.create({
   timeout: 30000,

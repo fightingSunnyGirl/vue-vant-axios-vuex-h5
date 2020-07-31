@@ -1,5 +1,8 @@
 
 const isProduction = process.env.NODE_ENV === 'production';
+const path = require('path');
+const pathResolve = pathUrl => path.resolve(__dirname, pathUrl);
+
 module.exports = {
   // 项目部署的基础路径 默认/
   // 放在子目录时使用./或者加你的域名
@@ -8,7 +11,20 @@ module.exports = {
     performance: {
       hints: false
     },
-    plugins: []
+    plugins: [],
+    resolve:{
+      alias: {
+        '@': pathResolve('src'),
+        '@assets': pathResolve('src/assets'),
+        '@services': pathResolve('src/services'),
+        '@layout': pathResolve('src/layout'),
+        '@views': pathResolve('src/views'),
+        '@store': pathResolve('src/store'),
+        '@routes': pathResolve('src/routes'),
+        '@utils': pathResolve('src/utils'),
+        '@components': pathResolve('src/components')
+      },
+    },
   },
   // 打包时不生成.map文件
   productionSourceMap: false,
@@ -19,9 +35,9 @@ module.exports = {
     hotOnly: false,
     // 设置代理，用来解决本地开发跨域问题
     proxy: {
-      '/laqu': {
-        'target': 'http://master.laqu.com',
-        pathRewrite: {'^/laqu' : ''},
+      '/proxy': {
+        'target': 'http://master.xx.com',
+        pathRewrite: {'^/proxy' : ''},
         secure: false,
         changeOrigin: true,
       }

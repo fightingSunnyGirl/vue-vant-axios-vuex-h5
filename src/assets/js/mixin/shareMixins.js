@@ -13,18 +13,18 @@ let shareFunc = {
      * 微信分享
      * config =>为对象 配置分享标题 图片 url等 
      * {
-     * title:"在吗？刚在这里领了个好货！亲测真实，每月都可以不花钱领百件好货！",//标题
-     * desc:"每天只需要花1分钟帮商家做任务即可，超级简单哟~",//副标题
-     * imgUrl:"https://s0.laqu.com/laqu/images/img1526491015502_730.png",//图片 代言人页面的链接 和 商品详情页的 动态传入 其他的用网站logo
+     * title:"标题",//标题
+     * desc:"副标题",//副标题
+     * imgUrl:"url",//图片 代言人页面的链接 和 商品详情页的 动态传入 其他的用网站logo
      * link:"分享的出去的链接",  //分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致 路径自己拼需是完整路径(带域名) 默认当前页面
      * }
      * 
      * dailogName => 需要关闭的弹窗的控制器名字
      * */
     wxShareHandle(config = {
-      title: "在吗？刚在这里领了个好货！亲测真实，每月都可以不花钱领百件好货！",
-      desc: "每天只需要花1分钟帮商家做任务即可，超级简单哟~",
-      imgUrl: "https://s0.laqu.com/laqu/images/img1526491015502_730.png",
+      title: "标题",
+      desc: "副标题",
+      imgUrl: "图片完整路径http://XXX.com/a.png",
     }, dailogName) {
 
       let $this = this ;

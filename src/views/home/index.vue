@@ -5,7 +5,7 @@
 </template>
 <script>
   //js统一提到外部 从外部引入 @(别名)直接定位到/src目录下
-    import home from '@/assets/js/home/index.js'
+    import home from '@assets/js/home/index.js'
     export default {
         ...home,
        components: {//组建
